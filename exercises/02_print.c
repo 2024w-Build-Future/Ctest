@@ -2,6 +2,6 @@
 
 int main() {
     //TODO: Print "4" to the console
-    int a;
+    int a=0;
     return 0;
 }
