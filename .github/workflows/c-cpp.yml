@@ -27,7 +27,7 @@ jobs:
           curl -X POST http://117.72.112.62:8080/api/updateGrade \
             -H "Content-Type: application/json" \
             -d "$(cat ./build/test_results.json)"
-    - run: cat "$(cat ./build/test_results.json)"
+    - run: "$(cat ./build/test_results.json)"
     - run: cat ./build/test_results.json
     
     - name: 清空
