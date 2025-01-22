@@ -20,7 +20,7 @@ jobs:
     #- name: make
     #  run: make
     - name: 检查
-      run: make test-output
+      run: make save-test-results
     - name: Send POST request with JSON data
       run: |
           # 使用 curl 发送 POST 请求
