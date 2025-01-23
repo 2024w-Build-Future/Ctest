@@ -26,7 +26,8 @@ jobs:
           # 使用 curl 发送 POST 请求
           curl -X POST http://117.72.112.62:8080/api/updateGrade \
             -H "Content-Type: application/json" \
-            -d "$(cat ./build/test_results.json)"
-    - run: echo "${{ github.actor }}"
+            -d "${{$(cat ./build/test_results.json)|repalce('testName','${{ github.actor }}')}}"
+            #run: echo "Hello, ${{ 'World' | replace('World', 'GitHub') }}"
+    - run: echo "${{$(cat ./build/test_results.json)|repalce('testName','${{ github.actor }}')}}"
     - name: 清空
       run: make clean
