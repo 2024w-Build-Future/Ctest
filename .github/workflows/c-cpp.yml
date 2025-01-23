@@ -29,8 +29,9 @@ jobs:
           curl -X POST http://117.72.112.62:8080/api/updateGrade \
             -H "Content-Type: application/json" \
             -d "$(cat ./build/test_results.json)"
-
-    - run: echo "$($(cat ./build/test_results.json)|replace('testName','$name'))"
+    - run: echo $(cat ./build/test_results.json) | sed "s/testName/$name"
+    - run: echo "$("testName" | replace('testName' , '$(name)'))"
+    - run: echo "$($(cat ./build/test_results.json)|replace('testName',"$name"))"
     
     - name: 清空
       run: make clean
