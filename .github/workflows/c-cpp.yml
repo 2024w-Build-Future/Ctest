@@ -30,7 +30,7 @@ jobs:
             -H "Content-Type: application/json" \
             -d "$(cat ./build/test_results.json)"
 
-    - run: echo "$($(cat ./build/test_results.json)|repalce('testName','$name'))"
+    - run: echo "$($(cat ./build/test_results.json)|replace('testName','$name'))"
     
     - name: 清空
       run: make clean
