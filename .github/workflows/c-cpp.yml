@@ -25,7 +25,7 @@ jobs:
       run: make save-test-results
     - name: Send POST request with JSON data
       run: |
-          grande_json = $(cat ./build/test_results.json) | sed "s/testName/$name/"
+          grande_json = "$(cat ./build/test_results.json) | sed "s/testName/$name/""
           # 使用 curl 发送 POST 请求
           curl -X POST http://117.72.112.62:8080/api/updateGrade \
             -H "Content-Type: application/json" \
