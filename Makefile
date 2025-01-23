@@ -71,7 +71,7 @@ save-test-results: $(EXECUTABLES)
         	passed=$$((passed+1)); \
     	fi; \
 	done; \
-	echo $(whoami)
+	whoami
 	echo "{\"channel\": \"github\",\"courseId\": 1558,\"ext\": \"aaa\",\"name\": \"testName\",\"score\": $$passed,\"totalScore\": $$total}" > $(BUILD_DIR)/test_results.json
 	#@$(MAKE) clean
 
