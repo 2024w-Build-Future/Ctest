@@ -36,6 +36,11 @@ jobs:
     - run: echo "$grade_json"
 
     - run: echo "$GITHUB_CONTEXT"
+    - run: echo "${{ github.actor }}"
+    - run: echo "${{ github.triggering_actor }}"
+    - run: echo "${{ github.pusher.name }}"
+    - run: echo "${{ github.sender.login }}"
+
     
     - name: 清空
       run: make clean
