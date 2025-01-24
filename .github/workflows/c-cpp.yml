@@ -11,6 +11,7 @@ on:
 
 env:
   name: "${{ github.actor }}"
+  GITHUB_CONTEXT: ${{ toJson(github) }}
 
 jobs:
   build:
@@ -33,6 +34,8 @@ jobs:
             -d "$grade_json"
     #- run: echo $(cat ./build/test_results.json) | sed "s/testName/$name/"
     - run: echo "$grade_json"
+
+    - run: "$GITHUB_CONTEXT"
     
     - name: 清空
       run: make clean
