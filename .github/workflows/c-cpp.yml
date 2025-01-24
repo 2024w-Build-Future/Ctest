@@ -35,7 +35,7 @@ jobs:
     #- run: echo $(cat ./build/test_results.json) | sed "s/testName/$name/"
     - run: echo "$grade_json"
 
-    - run: "$GITHUB_CONTEXT"
+    - run: echo "$GITHUB_CONTEXT"
     
     - name: 清空
       run: make clean
