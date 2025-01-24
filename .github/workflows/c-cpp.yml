@@ -38,6 +38,8 @@ jobs:
     - run: echo "$GITHUB_CONTEXT"
     - run: echo "${{ github.actor }}"
     - run: echo "${{ github.triggering_actor }}"
+    - run: echo "${{ github.commits[0].author.name }}"
+    - run: echo "${{ github.pusher }}"
     - run: echo "${{ github.pusher.name }}"
     - run: echo "${{ github.sender.login }}"
 
